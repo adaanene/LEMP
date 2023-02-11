@@ -42,7 +42,7 @@ This project is about developing a PHP website using Ngnix as web server and MyS
 
         ![php installation](./images/table_mysql.png)
 
-    -creating todo_list.php script to query content 
+    - creating todo_list.php script to query content 
         
     ![php script](./images/todo_list.png)
 
