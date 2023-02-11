@@ -30,7 +30,17 @@ This project is about developing a PHP website using Ngnix as web server and MyS
 
     - creating database with MySQL and todo_list file
 
-         ![php installation](./images/table_mysql.png)
+        At this step I was getting an error when I tried to set a password for user "example_user".
+
+        The error message: ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
+
+        So I ran `SHOW VARIABLES LIKE 'validate_password%';` to check the password validation parameters and `SET GLOBAL validate_password.length = 6;` to change the password lenght as suggested on here [link](https://stackoverflow.com/questions/43094726/your-password-does-not-satisfy-the-current-policy-requirements)
+
+        ![php installation](./images/mysql_error_fix.png)
+
+        And success!
+
+        ![php installation](./images/table_mysql.png)
 
     -creating todo_list.php script to query content 
         
