@@ -1,1 +1,1 @@
-# project_2
+This project is about deploying and configuring a LEMP solution using  Nginx Web Server
