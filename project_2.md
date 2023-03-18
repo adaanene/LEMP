@@ -53,7 +53,7 @@ links for help:
 
     Try to access it with Google Chrome (or any other browser) with the URL  `http://<Public-IP-Address>:80` replacing `<Public-IP-Address>` with your instance IP address or you can use its DNS name instead
 
-    If you see this the Ngnix is correctly installed and accessible through your Firewall
+    If you see this it means that Ngnix is correctly installed and accessible through your Firewall
 
     ![ngnix](/project_2-LEMP/images/Nginxresponse.png)
 

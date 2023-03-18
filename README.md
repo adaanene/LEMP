@@ -1,1 +1,1 @@
-This project is about deploying and configuring a LEMP solution using  Nginx Web Server.
+Creating a website using LEMP stack
