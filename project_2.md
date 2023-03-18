@@ -324,10 +324,11 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
     ```
 
 
-10. save and close the editor, now test your script. Go to your browser and open yur website with `http://<Public_domain_or_IP>/todo_list.php`
+10. Save and close the editor, now test your script. Go to your browser and open yur website with `http://<Public_domain_or_IP>/todo_list.php`
 
     If you see this then all is good!
-
+    
+    
     ![todo_list](/project_2-LEMP/images/todo_list.png)
 
 
