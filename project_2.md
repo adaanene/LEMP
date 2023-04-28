@@ -45,10 +45,10 @@ links for help:
 3. Verify that Ngnix is installed with `sudo systemctl status nginx`
    
 
-    **Note** In order to access you Ngnix web server you need to configure an open connection through port 80 in AWS- add it to the inboud rules in the network settings (security groups)
+    **Note** In order to access you Ngnix web server you need to configure an open connection through port 80 in AWS- add it to the inbound rules in the network settings (security groups)
 
 
-4. Test that the web server responds to requests for the Inetrnet
+4. Test that the web server responds to requests for the Internet
 
 
     Try to access it with Google Chrome (or any other browser) with the URL  `http://<Public-IP-Address>:80` replacing `<Public-IP-Address>` with your instance IP address or you can use its DNS name instead
@@ -101,7 +101,7 @@ links for help:
     **Note** In level 2 validation, you should choose a complex password with a mix of upper and lowercase letters, special characters and numbers otherwise you will get an error
 
     
-6. After validating password (or not) press `y` for all other rquestions
+6. After validating password (or not) press `y` for all other questions
 
 
 7. Test your new password with `$ sudo mysql -p`
@@ -112,7 +112,7 @@ links for help:
 
 ### Install PHP packages and configure Ngnix to use PHP 
 
-1. run `sudo apt install php-fpm php-mysql` to install packagaes php-fpm and php-mysql which allow Nginx to work with PHP nad MySQL respsectively
+1. run `sudo apt install php-fpm php-mysql` to install packages php-fpm and php-mysql which allow Nginx to work with PHP nad MySQL respectively
 
     press `y` to confirm installation
 
@@ -122,7 +122,7 @@ links for help:
      `sudo mkdir /var/www/projectlemp` to to serve documents from your domain
 
 
-3. Give ownwership of your domain's directory to systemm user with ` sudo chown -R $USER:$USER /var/www/projectlemp` 
+3. Give ownership of your domain's directory to system user with ` sudo chown -R $USER:$USER /var/www/projectlemp` 
 
 
 4. Run `sudo nano /etc/ngnix/sites-available/projectlemp` to open a new configuration in Ngnix "sites-available" directory. Paste the following into the file, then save and exit the editor.
@@ -174,7 +174,7 @@ links for help:
     `sudo unlink /etc/nginx/sites-enabled/default`
 
 
-7. Reload Ngnix to apply chnages with `sudo systemctl reload nginx`
+7. Reload Ngnix to apply changes with `sudo systemctl reload nginx`
     
 
 8. Create and index.html file inside your domain directory /var/www/projectlemp to test that your server works perfectly, and inside the file write the following
@@ -235,7 +235,7 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
 
         The error message: ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
 
-        So I ran `SHOW VARIABLES LIKE 'validate_password%';` to check the password validation parameters and `SET GLOBAL validate_password.length = 6;` to change the password lenght as suggested on here [link](https://stackoverflow.com/questions/43094726/your-password-does-not-satisfy-the-current-policy-requirements)
+        So I ran `SHOW VARIABLES LIKE 'validate_password%';` to check the password validation parameters and `SET GLOBAL validate_password.length = 6;` to change the password length as suggested on here [link](https://stackoverflow.com/questions/43094726/your-password-does-not-satisfy-the-current-policy-requirements)
 
         ![validate password](./images/mysql_error_fix.png)
 
@@ -248,7 +248,7 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
 
     - use `mysql -u example_user -p` and enter password 
 
-    - use `mysql> SHOW DATABASES:` to check that new use has acess to the new database and you will see this
+    - use `mysql> SHOW DATABASES:` to check that new use has access to the new database and you will see this
 
         ```
         Output
@@ -278,7 +278,7 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
 6. Insert a few values using this command `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");` as many times as you need and USING different VALUES
 
 
-7. test your table with `mysql>  SELECT * FROM example_database.todo_list;` and you will sall the VALUES you entered in a table
+7. test your table with `mysql>  SELECT * FROM example_database.todo_list;` and you will see all the VALUES you entered in a table
 
 
     ```
