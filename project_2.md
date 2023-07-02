@@ -55,7 +55,7 @@ links for help:
 
     If you see this it means that Ngnix is correctly installed and accessible through your Firewall
 
-    ![ngnix](/project_2-LEMP/images/Nginxresponse.png)
+    ![nginx](/project_2-LEMP/images/nginx.png)
 
 
 ### Install MySQL and run security script**
@@ -203,7 +203,7 @@ links for help:
 
 2. Save and exit the editor. Reload the `http://<server_domain or IP address>:80` page in your browser and you will see a web page containing detailed information about your server
 
-    ![PHP](/project_2-LEMP/images/php_testing.png)
+    ![PHP](/project_2-LEMP/images/php_page.png)
 
 
 3. The run `sudo rm /var/www/projectlemp/info.php` to remove the file as it contains sensitive information
@@ -237,7 +237,7 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
 
         So I ran `SHOW VARIABLES LIKE 'validate_password%';` to check the password validation parameters and `SET GLOBAL validate_password.length = 6;` to change the password length as suggested on here [link](https://stackoverflow.com/questions/43094726/your-password-does-not-satisfy-the-current-policy-requirements)
 
-        ![validate password](./images/mysql_error_fix.png)
+        ![table](./images/mysql_table.png)
 
 
 
