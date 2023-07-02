@@ -328,7 +328,6 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
 
     If you see this then all is good!
     
-    
     ![todo_list](/project_2-LEMP/images/todo_list.png)
 
 
