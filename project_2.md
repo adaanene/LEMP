@@ -4,42 +4,14 @@
 This project is about developing a PHP website using Ngnix as web server and MySQL as database management system.
 
 
-### Create an EC2 instance of t2.micro family with Ubuntu Server 20.04 LTS (HVM) in AWS
-   
-
-links for help: 
-   
-
-[Install OpenSSH for Windows](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell)
-   
-   
-[Key-based authentication in OpenSSH for Windows](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
-
-
-[Using EC2 as your virtual server](https://www.youtube.com/watch?v=xxKuB9kJoYM&list=PLtPuNR8I4TvkwU7Zu0l0G_uwtSUXLckvh&index=7)   
-   
-   
-[connecting to EC2 instance in AWS](https://www.youtube.com/watch?v=TxT6PNJts-s&list=PLtPuNR8I4TvkwU7Zu0l0G_uwtSUXLckvh&index=8)
-
-
-1. Open terminal and move into the folder where you saved your public key, use `cd <folder>`
-
-
-    **NOTE** to ensure that your key is not publicly viewable run `chmod 400 PBL_key_pair.pem`, otherwise you could get a "Bad permissions" error
-
-
-2. Start your EC2 instance in AWS and SSH into it(=connect) with public key and its Public DNS in you terminal
-
-
-    use: `ssh -i <private-key-name>.pem ubuntu@<Public-IP-address>` 
-
-
 ### Install Ngnix web server
+
+1. Create an EC2 instance with Ubuntu Server 20.04 LTS in AWS
 
 1. Update **apt** package manager in Ubuntu with `sudo apt update`
 
 
-2. install Ngnix package with `sudo apt install ngnix` and confirm with `y` to install
+2. Install Ngnix package with `sudo apt install ngnix` and confirm with `y` to install
 
     
 3. Verify that Ngnix is installed with `sudo systemctl status nginx`
@@ -80,34 +52,7 @@ links for help:
 5. Run security script with  `sudo mysql_secure_installation` to set password for MySQL
 
 
-    **Note** after this command you will be asked if you want to enable the VALIDATE PASSWORD PLUGIN, to validate a password for the database root user. If enabled, MySQL will reject passwords with an error if they don't meet the specified criteria. 
-    
-    Validation can be stopped without risk, but you should always use secure, one-of-a-kind passwords for database logins. Also note that the database root user is not the same as the system root, in fact the database root is an administrative user that has full privileges over the system root.
-
-
-    If you choose 'yes' keep in mind that you need to choose the strength for your password based on the following
-
-    ```
-    # There are three levels of password validation policy:
-
-    LOW    Length >= 8
-    MEDIUM Length >= 8, numeric, mixed case, and special characters
-    STRONG Length >= 8, numeric, mixed case, special characters and dictionary              file
-
-    Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 1
-    ```
-
-
-    **Note** In level 2 validation, you should choose a complex password with a mix of upper and lowercase letters, special characters and numbers otherwise you will get an error
-
-    
-6. After validating password (or not) press `y` for all other questions
-
-
 7. Test your new password with `$ sudo mysql -p`
-
- 
-    **Note** make sure you have mysql_native_password configured for PHP applications as MySQL PHP library mysqlnd doesn’t support caching_sha2_authentication, the default authentication method for MySQL 8. 
 
 
 ### Install PHP packages and configure Ngnix to use PHP 
@@ -211,17 +156,10 @@ links for help:
 
 ### Retrieve data from MySQL database with PHP
 
-
-Create a test database (DB) with simple "To do list" and configure access to it, so the Nginx website would be able to query data from the DB and display it.
-
-
-At the time of writing, the native MySQL PHP library `mysqlnd` does not support `caching sha2 authentication`, MySQL 8's default authentication method. To connect to the MySQL database using PHP, we'll need to create a new user using the `mysql_native_password` authentication method.
+1. Login to MySQl with `sudo mysql`
 
 
-1. login to MySQl with `sudo mysql`
-
-
-2. create a new database and new user with full privileges on the database
+2. Create a new database and new user with full privileges on the database
 
    - `mysql> CREATE DATABASE 'example_database';`
 
@@ -298,7 +236,7 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
 8. exit MySQL with `exit`
 
 
-9. create a PHP test script that can listen to MySQL and display the contents from teh todo_list table
+9. create a PHP test script that can listen to MySQL and display the contents from the todo_list table
 
 
     use `nano /var/www/projectLEMP/todo_list.php` and paste into the page the following
@@ -324,7 +262,7 @@ At the time of writing, the native MySQL PHP library `mysqlnd` does not support 
     ```
 
 
-10. Save and close the editor, now test your script. Go to your browser and open your website with `http://<Public_domain_or_IP>/todo_list.php`
+10. Save and close the editor, now go to your browser and open your website with `http://<Public_domain_or_IP>/todo_list.php`
 
     If you see this then all is good!
     
