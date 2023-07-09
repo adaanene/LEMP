@@ -27,6 +27,7 @@ This project is about developing a PHP website using Ngnix as web server and MyS
 
     If you see this it means that Ngnix is correctly installed and accessible through your Firewall
 
+    
     ![nginx](/project_2-LEMP/images/nginx.png)
 
 
@@ -148,6 +149,7 @@ This project is about developing a PHP website using Ngnix as web server and MyS
 
 2. Save and exit the editor. Reload the `http://<server_domain or IP address>:80` page in your browser and you will see a web page containing detailed information about your server
 
+   
     ![PHP](/project_2-LEMP/images/php_page.png)
 
 
