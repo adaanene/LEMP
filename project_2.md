@@ -268,7 +268,7 @@ This project is about developing a PHP website using Ngnix as web server and MyS
 
     If you see this then all is good!
     
-    ![todo_list](/project_2-LEMP/images/todo_list.png)
+    ![todo_list](./images/todo_list.png)
 
 
 
