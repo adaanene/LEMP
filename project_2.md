@@ -150,7 +150,7 @@ This project is about developing a PHP website using Ngnix as web server and MyS
 2. Save and exit the editor. Reload the `http://<server_domain or IP address>:80` page in your browser and you will see a web page containing detailed information about your server
 
    
-    ![PHP](/project_2-LEMP/images/php_page.png)
+    ![PHP](./images/php_page.png)
 
 
 3. The run `sudo rm /var/www/projectlemp/info.php` to remove the file as it contains sensitive information
