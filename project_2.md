@@ -28,7 +28,7 @@ This project is about developing a PHP website using Ngnix as web server and MyS
     If you see this it means that Ngnix is correctly installed and accessible through your Firewall
 
     
-    ![nginx](/project_2-LEMP/images/nginx.png)
+    ![nginx](./images/nginx.png)
 
 
 ### Install MySQL and run security script**
